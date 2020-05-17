@@ -1,0 +1,10 @@
+C:\Users\danq9\RiderProjects\BLACK-OOPS_Arkanoid\BLACK-OOPS_Arkanoid\bin\Debug\BLACK_OOPS_Arkanoid.exe.config
+C:\Users\danq9\RiderProjects\BLACK-OOPS_Arkanoid\BLACK-OOPS_Arkanoid\bin\Debug\BLACK_OOPS_Arkanoid.exe
+C:\Users\danq9\RiderProjects\BLACK-OOPS_Arkanoid\BLACK-OOPS_Arkanoid\bin\Debug\BLACK_OOPS_Arkanoid.pdb
+C:\Users\danq9\RiderProjects\BLACK-OOPS_Arkanoid\BLACK-OOPS_Arkanoid\obj\Debug\BLACK-OOPS_Arkanoid.csprojAssemblyReference.cache
+C:\Users\danq9\RiderProjects\BLACK-OOPS_Arkanoid\BLACK-OOPS_Arkanoid\obj\Debug\BLACK_OOPS_Arkanoid.Properties.Resources.resources
+C:\Users\danq9\RiderProjects\BLACK-OOPS_Arkanoid\BLACK-OOPS_Arkanoid\obj\Debug\BLACK-OOPS_Arkanoid.csproj.GenerateResource.cache
+C:\Users\danq9\RiderProjects\BLACK-OOPS_Arkanoid\BLACK-OOPS_Arkanoid\obj\Debug\BLACK-OOPS_Arkanoid.csproj.CoreCompileInputs.cache
+C:\Users\danq9\RiderProjects\BLACK-OOPS_Arkanoid\BLACK-OOPS_Arkanoid\obj\Debug\BLACK_OOPS_Arkanoid.exe
+C:\Users\danq9\RiderProjects\BLACK-OOPS_Arkanoid\BLACK-OOPS_Arkanoid\obj\Debug\BLACK_OOPS_Arkanoid.pdb
+C:\Users\danq9\RiderProjects\BLACK-OOPS_Arkanoid\BLACK-OOPS_Arkanoid\obj\Debug\BLACK_OOPS_Arkanoid.Form1.resources
