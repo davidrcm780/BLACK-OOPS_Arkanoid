@@ -32,7 +32,6 @@ namespace BLACK_OOPS_Arkanoid
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.playground = new System.Windows.Forms.Panel();
             this.ball = new System.Windows.Forms.PictureBox();
             this.player = new System.Windows.Forms.PictureBox();
@@ -56,7 +55,7 @@ namespace BLACK_OOPS_Arkanoid
             // 
             // ball
             // 
-            this.ball.Image = ((System.Drawing.Image) (resources.GetObject("ball.Image")));
+            this.ball.Image = global::BLACK_OOPS_Arkanoid.Properties.Resources.Ball;
             this.ball.Location = new System.Drawing.Point(712, 23);
             this.ball.Name = "ball";
             this.ball.Size = new System.Drawing.Size(30, 30);
@@ -67,7 +66,7 @@ namespace BLACK_OOPS_Arkanoid
             // player
             // 
             this.player.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.player.Image = ((System.Drawing.Image) (resources.GetObject("player.Image")));
+            this.player.Image = global::BLACK_OOPS_Arkanoid.Properties.Resources.Player;
             this.player.Location = new System.Drawing.Point(286, 370);
             this.player.Name = "player";
             this.player.Size = new System.Drawing.Size(199, 68);
