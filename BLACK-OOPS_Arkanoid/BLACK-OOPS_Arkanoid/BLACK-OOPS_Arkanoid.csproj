@@ -89,16 +89,34 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="ConnectionDB.cs" />
+        <Compile Include="firstMenu.cs">
+          <SubType>UserControl</SubType>
+        </Compile>
+        <Compile Include="firstMenu.Designer.cs">
+          <DependentUpon>firstMenu.cs</DependentUpon>
+        </Compile>
         <Compile Include="Form1.cs">
             <SubType>Form</SubType>
         </Compile>
         <Compile Include="Form1.Designer.cs">
             <DependentUpon>Form1.cs</DependentUpon>
         </Compile>
+        <Compile Include="gameMenu.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="gameMenu.Designer.cs">
+          <DependentUpon>gameMenu.cs</DependentUpon>
+        </Compile>
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
+        <EmbeddedResource Include="firstMenu.resx">
+          <DependentUpon>firstMenu.cs</DependentUpon>
+        </EmbeddedResource>
         <EmbeddedResource Include="Form1.resx">
           <DependentUpon>Form1.cs</DependentUpon>
+        </EmbeddedResource>
+        <EmbeddedResource Include="gameMenu.resx">
+          <DependentUpon>gameMenu.cs</DependentUpon>
         </EmbeddedResource>
         <EmbeddedResource Include="Properties\Resources.resx">
             <Generator>ResXFileCodeGenerator</Generator>
@@ -124,6 +142,9 @@
         <None Include="App.config" />
     </ItemGroup>
     <ItemGroup>
+      <Content Include="Resources\arkanoid_title.png" />
+      <Content Include="Resources\arkanoid_title1.png" />
+      <Content Include="Resources\arkanoid_title2.png" />
       <Content Include="Resources\Ball.png" />
       <Content Include="Resources\Heart.png" />
       <Content Include="Resources\Player.png" />
