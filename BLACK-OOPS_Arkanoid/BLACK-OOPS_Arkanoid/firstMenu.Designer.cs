@@ -43,7 +43,7 @@ namespace BLACK_OOPS_Arkanoid
             // 
             this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pictureBox1.Image = ((System.Drawing.Image) (resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(243, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(246, 16);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(402, 138);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -98,7 +98,7 @@ namespace BLACK_OOPS_Arkanoid
             this.Controls.Add(this.PlayButton);
             this.Controls.Add(this.pictureBox1);
             this.Name = "firstMenu";
-            this.Size = new System.Drawing.Size(895, 491);
+            this.Size = new System.Drawing.Size(882, 498);
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
         }
