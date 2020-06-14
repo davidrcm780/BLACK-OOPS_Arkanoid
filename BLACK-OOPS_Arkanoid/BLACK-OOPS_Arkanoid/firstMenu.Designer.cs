@@ -62,6 +62,7 @@ namespace BLACK_OOPS_Arkanoid
             this.PlayButton.TabIndex = 1;
             this.PlayButton.Text = "JUGAR";
             this.PlayButton.UseVisualStyleBackColor = false;
+            this.PlayButton.Click += new System.EventHandler(this.PlayButton_Click);
             // 
             // scoresButton
             // 
@@ -75,6 +76,7 @@ namespace BLACK_OOPS_Arkanoid
             this.scoresButton.TabIndex = 2;
             this.scoresButton.Text = "PUNTAJES";
             this.scoresButton.UseVisualStyleBackColor = false;
+            this.scoresButton.Click += new System.EventHandler(this.scoresButton_Click);
             // 
             // ExitButton
             // 
