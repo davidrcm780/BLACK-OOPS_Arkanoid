@@ -22,5 +22,11 @@ namespace BLACK_OOPS_Arkanoid
             Hide();
             new scores().Show();
         }
+
+
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            System.Environment.Exit(0);
+        }
     }
 }

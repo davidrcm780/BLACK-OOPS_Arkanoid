@@ -76,6 +76,7 @@ namespace BLACK_OOPS_Arkanoid
             this.exitButton.TabIndex = 3;
             this.exitButton.Text = "EXIT";
             this.exitButton.UseVisualStyleBackColor = false;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             // 
             // scoresButton
             // 
