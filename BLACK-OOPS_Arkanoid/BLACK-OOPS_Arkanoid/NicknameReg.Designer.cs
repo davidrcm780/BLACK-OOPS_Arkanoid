@@ -2,7 +2,7 @@
 
 namespace BLACK_OOPS_Arkanoid
 {
-    partial class nicknameReg
+    partial class NicknameReg
     {
         /// <summary>
         /// Required designer variable.
@@ -98,7 +98,7 @@ namespace BLACK_OOPS_Arkanoid
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "nicknameReg";
+            this.Name = "NicknameReg";
             this.Text = "nicknameReg";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

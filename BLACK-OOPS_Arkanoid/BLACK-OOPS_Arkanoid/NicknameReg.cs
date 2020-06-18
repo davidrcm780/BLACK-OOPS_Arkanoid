@@ -3,9 +3,9 @@ using System.Windows.Forms;
 
 namespace BLACK_OOPS_Arkanoid
 {
-    public partial class nicknameReg : Form
+    public partial class NicknameReg : Form
     {
-        public nicknameReg()
+        public NicknameReg()
         {
             InitializeComponent();
         }
@@ -13,7 +13,7 @@ namespace BLACK_OOPS_Arkanoid
         private void button1_Click(object sender, EventArgs e)
         {
             Hide();
-            new Form1().Show();
+            new GameForm().Show();
         }
     }
 }

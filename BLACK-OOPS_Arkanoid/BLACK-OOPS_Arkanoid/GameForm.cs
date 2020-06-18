@@ -11,15 +11,17 @@ using System.Windows.Forms.VisualStyles;
 
 namespace BLACK_OOPS_Arkanoid
 {
-    public partial class Form1 : Form
+    public partial class GameForm : Form
     {
         //BALL SPEED
         public int speedX = 5; 
         public int speedY = 4;
         //POINTS SCORED
         public int point = 0;
+
+        private CustomPictureBox[,] cpb;
         
-        public Form1()
+        public GameForm()
         {
             InitializeComponent();
             
@@ -80,6 +82,19 @@ namespace BLACK_OOPS_Arkanoid
         {
             if (e.KeyCode == Keys.Escape)
                 this.Close();                //ESC TO QUIT
+        }
+
+        private void GameForm_Load(object sender, EventArgs e)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        private void LoadTiles()
+        {
+            int xAxis = 10;
+            int yAxis = 5;
+            
+            cpb = new CustomPictureBox[yAxis,xAxis];
         }
     }
 }
