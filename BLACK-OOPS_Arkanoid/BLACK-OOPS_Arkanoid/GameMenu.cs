@@ -16,5 +16,11 @@ namespace BLACK_OOPS_Arkanoid
             Hide();
             new NicknameReg().Show();
         }
+
+        private void scoresButton_Click(object sender, EventArgs e)
+        {
+            Hide();
+            new scores().Show();
+        }
     }
 }

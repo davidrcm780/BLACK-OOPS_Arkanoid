@@ -41,7 +41,6 @@ C:\Users\js_pr\OneDrive\Escritorio\Repositorios\BLACK-OOPS_Arkanoid\BLACK-OOPS_A
 C:\Users\js_pr\OneDrive\Escritorio\Repositorios\BLACK-OOPS_Arkanoid\BLACK-OOPS_Arkanoid\BLACK-OOPS_Arkanoid\bin\Debug\System.ValueTuple.xml
 C:\Users\js_pr\OneDrive\Escritorio\Repositorios\BLACK-OOPS_Arkanoid\BLACK-OOPS_Arkanoid\BLACK-OOPS_Arkanoid\obj\Debug\BLACK-OOPS_Arkanoid.csprojAssemblyReference.cache
 C:\Users\js_pr\OneDrive\Escritorio\Repositorios\BLACK-OOPS_Arkanoid\BLACK-OOPS_Arkanoid\BLACK-OOPS_Arkanoid\obj\Debug\BLACK_OOPS_Arkanoid.exe.config
-C:\Users\js_pr\OneDrive\Escritorio\Repositorios\BLACK-OOPS_Arkanoid\BLACK-OOPS_Arkanoid\BLACK-OOPS_Arkanoid\obj\Debug\BLACK_OOPS_Arkanoid.Form1.resources
 C:\Users\js_pr\OneDrive\Escritorio\Repositorios\BLACK-OOPS_Arkanoid\BLACK-OOPS_Arkanoid\BLACK-OOPS_Arkanoid\obj\Debug\BLACK_OOPS_Arkanoid.Properties.Resources.resources
 C:\Users\js_pr\OneDrive\Escritorio\Repositorios\BLACK-OOPS_Arkanoid\BLACK-OOPS_Arkanoid\BLACK-OOPS_Arkanoid\obj\Debug\BLACK-OOPS_Arkanoid.csproj.GenerateResource.cache
 C:\Users\js_pr\OneDrive\Escritorio\Repositorios\BLACK-OOPS_Arkanoid\BLACK-OOPS_Arkanoid\BLACK-OOPS_Arkanoid\obj\Debug\BLACK-OOPS_Arkanoid.csproj.CoreCompileInputs.cache
@@ -76,3 +75,5 @@ C:\Users\danq9\Desktop\Github Repositories\BLACK-OOPS_Arkanoid\BLACK-OOPS_Arkano
 C:\Users\danq9\Desktop\Github Repositories\BLACK-OOPS_Arkanoid\BLACK-OOPS_Arkanoid\BLACK-OOPS_Arkanoid\obj\Debug\BLACK_OOPS_Arkanoid.nicknameReg.resources
 C:\Users\danq9\Desktop\Github Repositories\BLACK-OOPS_Arkanoid\BLACK-OOPS_Arkanoid\BLACK-OOPS_Arkanoid\obj\Debug\BLACK-OOPS_Arkanoid.csproj.CopyComplete
 C:\Users\danq9\Desktop\Github Repositories\BLACK-OOPS_Arkanoid\BLACK-OOPS_Arkanoid\BLACK-OOPS_Arkanoid\obj\Debug\BLACK_OOPS_Arkanoid.GameForm.resources
+C:\Users\js_pr\OneDrive\Escritorio\Repositorios\BLACK-OOPS_Arkanoid\BLACK-OOPS_Arkanoid\BLACK-OOPS_Arkanoid\obj\Debug\BLACK_OOPS_Arkanoid.GameForm.resources
+C:\Users\js_pr\OneDrive\Escritorio\Repositorios\BLACK-OOPS_Arkanoid\BLACK-OOPS_Arkanoid\BLACK-OOPS_Arkanoid\obj\Debug\BLACK_OOPS_Arkanoid.scores.resources
