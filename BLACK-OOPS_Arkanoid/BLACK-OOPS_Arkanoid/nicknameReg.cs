@@ -3,18 +3,17 @@ using System.Windows.Forms;
 
 namespace BLACK_OOPS_Arkanoid
 {
-    public partial class gameMenu : Form
+    public partial class nicknameReg : Form
     {
-        
-        public gameMenu()
+        public nicknameReg()
         {
             InitializeComponent();
         }
 
-        private void playButton_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             Hide();
-            new nicknameReg().Show();
+            new Form1().Show();
         }
     }
 }

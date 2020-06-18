@@ -2,7 +2,7 @@
 
 namespace BLACK_OOPS_Arkanoid
 {
-    public partial class scores : UserControl
+    public partial class scores : Form
     {
         public scores()
         {
