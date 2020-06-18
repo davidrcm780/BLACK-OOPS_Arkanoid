@@ -81,20 +81,57 @@ namespace BLACK_OOPS_Arkanoid
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Escape)
-                this.Close();                //ESC TO QUIT
+                Close();                //ESC TO QUIT
         }
 
         private void GameForm_Load(object sender, EventArgs e)
         {
-            throw new System.NotImplementedException();
+            LoadTiles();
         }
 
         private void LoadTiles()
         {
             int xAxis = 10;
             int yAxis = 5;
+
+            int pbHeight = (int)(Height * 0.3) / yAxis;
+            int pbWidth = Width / xAxis;
             
             cpb = new CustomPictureBox[yAxis,xAxis];
+
+            for (int i = 0; i < yAxis; i++)
+            {
+                for (int j = 0; j < xAxis; j++)
+                {
+                    cpb[i,j] = new CustomPictureBox();
+
+                    if (i == 0)
+                    {
+                        cpb[i, j].Golpes = 2;
+                    }
+                    else
+                    {
+                        cpb[i, j].Golpes = 1;
+                    }
+
+                    cpb[i, j].Height = pbHeight;
+                    cpb[i, j].Width = pbWidth;
+                    
+                    //POSICION DE LEFT Y TOP
+
+                    cpb[i, j].Left = j * pbWidth;
+                    cpb[i, j].Top = i * pbHeight;
+
+                    cpb[i, j].BackgroundImage = Image.FromFile("../../Sprites/" + (i+1) + ".png");
+                    cpb[i,j].SizeMode = PictureBoxSizeMode.StretchImage;
+
+                    cpb[i, j].Tag = "tileTag";
+                    
+                    Controls.Add(cpb[i,j]);
+                }
+            }
+            
+            
         }
     }
 }
