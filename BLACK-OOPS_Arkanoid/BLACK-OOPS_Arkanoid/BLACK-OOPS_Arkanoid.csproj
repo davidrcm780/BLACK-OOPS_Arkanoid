@@ -33,6 +33,9 @@
         <WarningLevel>4</WarningLevel>
     </PropertyGroup>
     <ItemGroup>
+        <Reference Include="BLACK_OOPS_Arkanoid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+          <HintPath>bin\Debug\BLACK_OOPS_Arkanoid.exe</HintPath>
+        </Reference>
         <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51">
           <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
           <Private>True</Private>
@@ -89,40 +92,41 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="ConnectionDB.cs" />
-        <Compile Include="firstMenu.cs">
-          <SubType>UserControl</SubType>
-        </Compile>
-        <Compile Include="firstMenu.Designer.cs">
-          <DependentUpon>firstMenu.cs</DependentUpon>
-        </Compile>
-        <Compile Include="Form1.cs">
+        <Compile Include="CustomPictureBox.cs" />
+        <Compile Include="GameForm.cs">
             <SubType>Form</SubType>
         </Compile>
-        <Compile Include="Form1.Designer.cs">
-            <DependentUpon>Form1.cs</DependentUpon>
+        <Compile Include="GameForm.Designer.cs">
+            <DependentUpon>GameForm.cs</DependentUpon>
         </Compile>
-        <Compile Include="gameMenu.cs">
+        <Compile Include="GameMenu.cs">
           <SubType>Form</SubType>
         </Compile>
-        <Compile Include="gameMenu.Designer.cs">
-          <DependentUpon>gameMenu.cs</DependentUpon>
+        <Compile Include="GameMenu.Designer.cs">
+          <DependentUpon>GameMenu.cs</DependentUpon>
+        </Compile>
+        <Compile Include="NicknameReg.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="NicknameReg.Designer.cs">
+          <DependentUpon>NicknameReg.cs</DependentUpon>
         </Compile>
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
         <Compile Include="scores.cs">
-          <SubType>UserControl</SubType>
+          <SubType>Form</SubType>
         </Compile>
         <Compile Include="scores.Designer.cs">
           <DependentUpon>scores.cs</DependentUpon>
         </Compile>
-        <EmbeddedResource Include="firstMenu.resx">
-          <DependentUpon>firstMenu.cs</DependentUpon>
+        <EmbeddedResource Include="GameForm.resx">
+          <DependentUpon>GameForm.cs</DependentUpon>
         </EmbeddedResource>
-        <EmbeddedResource Include="Form1.resx">
-          <DependentUpon>Form1.cs</DependentUpon>
+        <EmbeddedResource Include="GameMenu.resx">
+          <DependentUpon>GameMenu.cs</DependentUpon>
         </EmbeddedResource>
-        <EmbeddedResource Include="gameMenu.resx">
-          <DependentUpon>gameMenu.cs</DependentUpon>
+        <EmbeddedResource Include="NicknameReg.resx">
+          <DependentUpon>NicknameReg.cs</DependentUpon>
         </EmbeddedResource>
         <EmbeddedResource Include="Properties\Resources.resx">
             <Generator>ResXFileCodeGenerator</Generator>
