@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +21,11 @@ namespace BLACK_OOPS_Arkanoid
         public int point = 0;
 
         private CustomPictureBox[,] cpb;
+       public PictureBox[,] blocks;
         
         public GameForm()
         {
+            
             InitializeComponent();
             
             DoubleBuffered = true;
@@ -87,6 +90,7 @@ namespace BLACK_OOPS_Arkanoid
         private void GameForm_Load(object sender, EventArgs e)
         {
             LoadTiles();
+            
         }
 
         private void LoadTiles()
@@ -122,8 +126,8 @@ namespace BLACK_OOPS_Arkanoid
                     cpb[i, j].Left = j * pbWidth;
                     cpb[i, j].Top = i * pbHeight;
 
-                    cpb[i, j].BackgroundImage = Image.FromFile("../../Sprites/" + (i+1) + ".png");
-                    cpb[i,j].SizeMode = PictureBoxSizeMode.StretchImage;
+                    cpb[i, j].BackgroundImage = Image.FromFile("../../Img/" + (i+1) + ".png");
+                    cpb[i,j].SizeMode = (PictureBoxSizeMode) ImageLayout.Stretch;
 
                     cpb[i, j].Tag = "tileTag";
                     
