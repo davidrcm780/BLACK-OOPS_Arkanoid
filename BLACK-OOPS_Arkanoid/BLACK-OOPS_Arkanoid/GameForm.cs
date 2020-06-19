@@ -21,12 +21,13 @@ namespace BLACK_OOPS_Arkanoid
         public int point = 0;
 
         private CustomPictureBox[,] cpb;
-       public PictureBox[,] blocks;
-        
+
         public GameForm()
         {
             
             InitializeComponent();
+            Height = ClientSize.Height;
+            Width = ClientSize.Width;
             
             DoubleBuffered = true;
             
@@ -38,7 +39,7 @@ namespace BLACK_OOPS_Arkanoid
             this.Bounds = Screen.PrimaryScreen.Bounds;       //MAKES IT FULL SCREEN
 
             player.Top = playground.Bottom - (playground.Bottom / 10);    //SETS PLAYER POSITION
-
+            
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -90,7 +91,6 @@ namespace BLACK_OOPS_Arkanoid
         private void GameForm_Load(object sender, EventArgs e)
         {
             LoadTiles();
-            
         }
 
         private void LoadTiles()
@@ -99,7 +99,7 @@ namespace BLACK_OOPS_Arkanoid
             int yAxis = 5;
 
             int pbHeight = (int)(Height * 0.3) / yAxis;
-            int pbWidth = Width / xAxis;
+            int pbWidth = (Width - (xAxis - 5)) / xAxis;
             
             cpb = new CustomPictureBox[yAxis,xAxis];
 
@@ -110,13 +110,10 @@ namespace BLACK_OOPS_Arkanoid
                     cpb[i,j] = new CustomPictureBox();
 
                     if (i == 0)
-                    {
                         cpb[i, j].Golpes = 2;
-                    }
                     else
-                    { 
                         cpb[i, j].Golpes = 1;
-                    }
+                    
 
                     cpb[i, j].Height = pbHeight;
                     cpb[i, j].Width = pbWidth;
@@ -126,8 +123,8 @@ namespace BLACK_OOPS_Arkanoid
                     cpb[i, j].Left = j * pbWidth;
                     cpb[i, j].Top = i * pbHeight;
 
-                    cpb[i, j].BackgroundImage = Image.FromFile("../../Img/" + (i+1) + ".png");
-                    cpb[i,j].SizeMode = (PictureBoxSizeMode) ImageLayout.Stretch;
+                    cpb[i, j].BackgroundImage = Image.FromFile("../../Img/1.png");    
+                    cpb[i, j].BackgroundImageLayout = ImageLayout.Stretch; 
 
                     cpb[i, j].Tag = "tileTag";
                     

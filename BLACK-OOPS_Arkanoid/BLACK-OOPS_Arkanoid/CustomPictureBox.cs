@@ -6,6 +6,6 @@ namespace BLACK_OOPS_Arkanoid
     {
         public int Golpes { get; set; } 
 
-        public CustomPictureBox() : base() {}
+        public CustomPictureBox() : base() { }
     }
 }

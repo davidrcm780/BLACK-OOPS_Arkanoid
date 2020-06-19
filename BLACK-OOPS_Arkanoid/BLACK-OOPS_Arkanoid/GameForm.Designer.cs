@@ -44,7 +44,7 @@ namespace BLACK_OOPS_Arkanoid
             // 
             // playground
             // 
-            this.playground.BackColor = System.Drawing.Color.Black;
+            this.playground.BackColor = System.Drawing.Color.Transparent;
             this.playground.Controls.Add(this.ball);
             this.playground.Controls.Add(this.player);
             this.playground.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -56,9 +56,10 @@ namespace BLACK_OOPS_Arkanoid
             // 
             // ball
             // 
+            this.ball.BackColor = System.Drawing.Color.Transparent;
             this.ball.Image = ((System.Drawing.Image) (resources.GetObject("ball.Image")));
-            this.ball.Location = new System.Drawing.Point(949, 28);
-            this.ball.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ball.Location = new System.Drawing.Point(491, 354);
+            this.ball.Margin = new System.Windows.Forms.Padding(4);
             this.ball.Name = "ball";
             this.ball.Size = new System.Drawing.Size(40, 37);
             this.ball.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -70,7 +71,7 @@ namespace BLACK_OOPS_Arkanoid
             this.player.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.player.Image = ((System.Drawing.Image) (resources.GetObject("player.Image")));
             this.player.Location = new System.Drawing.Point(381, 455);
-            this.player.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.player.Margin = new System.Windows.Forms.Padding(4);
             this.player.Name = "player";
             this.player.Size = new System.Drawing.Size(265, 84);
             this.player.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -89,7 +90,7 @@ namespace BLACK_OOPS_Arkanoid
             this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.playground);
             this.Icon = ((System.Drawing.Icon) (resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "GameForm";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.GameForm_Load);
