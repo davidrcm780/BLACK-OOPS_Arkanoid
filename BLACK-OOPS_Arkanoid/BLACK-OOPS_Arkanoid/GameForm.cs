@@ -110,7 +110,7 @@ namespace BLACK_OOPS_Arkanoid
                         cpb[i, j].Golpes = 2;
                     }
                     else
-                    {
+                    { 
                         cpb[i, j].Golpes = 1;
                     }
 
