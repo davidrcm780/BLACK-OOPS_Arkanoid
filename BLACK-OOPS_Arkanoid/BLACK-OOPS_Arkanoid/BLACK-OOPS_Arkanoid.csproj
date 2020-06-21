@@ -93,6 +93,8 @@
     <ItemGroup>
         <Compile Include="ConnectionDB.cs" />
         <Compile Include="CustomPictureBox.cs" />
+        <Compile Include="Exceptions\CharacterLimitReached.cs" />
+        <Compile Include="Exceptions\EmptyNicknameException.cs" />
         <Compile Include="GameData.cs" />
         <Compile Include="GameForm.cs">
             <SubType>Form</SubType>

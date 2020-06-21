@@ -102,6 +102,8 @@ namespace BLACK_OOPS_Arkanoid
                         {
                             playground.Controls.Remove(cpb[i, j]);
                             cpb[i, j] = null;
+                            speedY += 1;
+                            speedX += 1;
 
                             //remainingPb--;
                         }
@@ -129,7 +131,7 @@ namespace BLACK_OOPS_Arkanoid
                 GameData.gameStarted = true;
                 //BALL SPEED
                 speedX = 5; 
-                speedY = -4;
+                speedY = -5;
             }
 
             if (e.KeyCode == Keys.Escape)
