@@ -482,6 +482,7 @@ namespace BLACK_OOPS_Arkanoid
             this.Icon = ((System.Drawing.Icon) (resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(19, 19);
             this.Name = "scores";
+            this.Text = "Arkanoid";
             this.Load += new System.EventHandler(this.scores_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
