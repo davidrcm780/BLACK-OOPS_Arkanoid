@@ -155,6 +155,19 @@
         <None Include="App.config" />
     </ItemGroup>
     <ItemGroup>
+      <Content Include="Img\1.png" />
+      <Content Include="Img\10.png" />
+      <Content Include="Img\11.png" />
+      <Content Include="Img\12.png" />
+      <Content Include="Img\2.png" />
+      <Content Include="Img\3.png" />
+      <Content Include="Img\4.png" />
+      <Content Include="Img\5.png" />
+      <Content Include="Img\6.png" />
+      <Content Include="Img\7.png" />
+      <Content Include="Img\8.png" />
+      <Content Include="Img\9.png" />
+      <Content Include="Img\arcanoid.png" />
       <Content Include="Resources\arkanoid_title.png" />
       <Content Include="Resources\arkanoid_title1.png" />
       <Content Include="Resources\arkanoid_title2.png" />

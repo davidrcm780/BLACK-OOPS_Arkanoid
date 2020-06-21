@@ -16,7 +16,7 @@ namespace BLACK_OOPS_Arkanoid
     {
         //BALL SPEED
         public int speedX = 5; 
-        public int speedY = 4;
+        public int speedY = -4;
         //POINTS SCORED
         public int point = 0;
 
@@ -39,6 +39,7 @@ namespace BLACK_OOPS_Arkanoid
             this.Bounds = Screen.PrimaryScreen.Bounds;       //MAKES IT FULL SCREEN
 
             player.Top = playground.Bottom - (playground.Bottom / 10);    //SETS PLAYER POSITION
+            
             
         }
 
@@ -123,16 +124,19 @@ namespace BLACK_OOPS_Arkanoid
                     cpb[i, j].Left = j * pbWidth;
                     cpb[i, j].Top = i * pbHeight;
 
-                    cpb[i, j].BackgroundImage = Image.FromFile("../../Img/1.png");    
+                    cpb[i, j].BackgroundImage = Image.FromFile("../../Img/" + (i+1) + ".png");    
                     cpb[i, j].BackgroundImageLayout = ImageLayout.Stretch; 
 
                     cpb[i, j].Tag = "tileTag";
                     
-                    Controls.Add(cpb[i,j]);
+                    //Controls.Add(cpb[i,j]);
+                    playground.Controls.Add(cpb[i,j]);
+                    
                 }
             }
             
             
         }
+
     }
 }
