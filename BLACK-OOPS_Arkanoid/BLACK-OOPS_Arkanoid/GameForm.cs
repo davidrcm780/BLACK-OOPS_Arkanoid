@@ -121,7 +121,7 @@ namespace BLACK_OOPS_Arkanoid
                     
 
                     cpb[i, j].Height = pbHeight;
-                    cpb[i, j].Width = pbWidth;
+                    cpb[i, j].Width = pbWidth; 
                     
                     //POSICION DE LEFT Y TOP
 
