@@ -15,10 +15,17 @@ namespace BLACK_OOPS_Arkanoid
     public partial class GameForm : Form
     {
         //BALL SPEED
-        public int speedX = 5; 
-        public int speedY = -4;
+        public int speedX = 0; 
+        public int speedY = 0;
         //POINTS SCORED
         public int point = 0;
+
+        private int remainingPb = 0;
+        
+        private Label remainingLifes, score;
+        public Action FinishGame, WinningGame;
+
+
 
         private CustomPictureBox[,] cpb;
 
@@ -40,11 +47,7 @@ namespace BLACK_OOPS_Arkanoid
 
             //SETS PLAYER POSITION
             player.Top = playground.Bottom - (playground.Bottom / 10);    
-            player.Left = (playground.Width / 2) - (player.Width/2);
-            
-            //SETS THE BALL POSITION
-            ball.Top = player.Top - ball.Height;
-            ball.Left = player.Left + (player.Width / 2) - (ball.Width / 2);
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -84,11 +87,51 @@ namespace BLACK_OOPS_Arkanoid
             {
                 timer1.Enabled = false;     //BALL IS OUT SO GAME STOPS
             }
+            
+            // Rutina de colisiones con cpb
+            for (int i = 5; i >= 0; i--)
+            {
+                for (int j = 0; j < 10; j++)
+                {
+                    if (cpb[i, j] != null && ball.Bounds.IntersectsWith(cpb[i, j].Bounds))
+                    {   
+                        //GameData.score += (int)(cpb[i, j].Hits * GameData.ticksCount);
+                        cpb[i, j].Hits--;
+
+                        if (cpb[i, j].Hits == 0)
+                        {
+                            playground.Controls.Remove(cpb[i, j]);
+                            cpb[i, j] = null;
+
+                            //remainingPb--;
+                        }
+                        else if(cpb[i, j].Tag.Equals("blinded"))
+                            cpb[i, j].BackgroundImage = Image.FromFile("../../Img/11.png");
+
+                        speedY = -speedY;
+
+                        //score.Text = GameData.score.ToString();
+                        /*
+                        if (remainingPb == 0)
+                            WinningGame?.Invoke();
+                        */
+                        return;
+                    }
+                }
+            }
 
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
+            if (e.KeyCode == Keys.Space)
+            {
+                GameData.gameStarted = true;
+                //BALL SPEED
+                speedX = 5; 
+                speedY = -4;
+            }
+
             if (e.KeyCode == Keys.Escape)
                 Close();                //ESC TO QUIT
         }
@@ -116,10 +159,7 @@ namespace BLACK_OOPS_Arkanoid
                 {
                     cpb[i,j] = new CustomPictureBox();
 
-                    if (i == 0)
-                        cpb[i, j].Golpes = 2;
-                    else
-                        cpb[i, j].Golpes = 1;
+                    
                     
 
                     cpb[i, j].Height = pbHeight;
@@ -132,15 +172,17 @@ namespace BLACK_OOPS_Arkanoid
                     if (i == 5)
                     {
                         cpb[i, j].BackgroundImage = Image.FromFile("../../Img/12.png");
+                        cpb[i, j].Tag = "blinded";
+                        cpb[i, j].Hits = 2;
                     }
                     else
                     {
                         cpb[i, j].BackgroundImage = Image.FromFile("../../Img/" + (i+1) + ".png");
+                        cpb[i, j].Tag = "tileTag";
+                        cpb[i, j].Hits = 1;
                     }
                         
                     cpb[i, j].BackgroundImageLayout = ImageLayout.Stretch; 
-
-                    cpb[i, j].Tag = "tileTag";
                     
                     //Controls.Add(cpb[i,j]);
                     playground.Controls.Add(cpb[i,j]);
@@ -151,7 +193,13 @@ namespace BLACK_OOPS_Arkanoid
 
         private void playground_MouseMove(object sender, MouseEventArgs e)
         {
-            player.Left = e.X - (player.Width / 2);
+            player.Left = e.X - (player.Width/2);
+            
+            if (GameData.gameStarted == false)
+            {
+                ball.Top = player.Top - ball.Height;
+                ball.Left = player.Left + (player.Width / 2) - (ball.Width / 2);
+            }
         }
     }
 }
