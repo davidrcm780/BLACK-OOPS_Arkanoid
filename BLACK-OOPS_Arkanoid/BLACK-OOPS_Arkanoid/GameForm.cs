@@ -49,7 +49,7 @@ namespace BLACK_OOPS_Arkanoid
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            player.Left = Cursor.Position.X - (player.Width / 2);    //THIS CENTERS THE PLAYER AROUND THE CURSOR
+            //player.Left = Cursor.Position.X - (player.Width / 2);    //THIS CENTERS THE PLAYER AROUND THE CURSOR
             
             //BALL MOVEMENT
             ball.Left += speedX;
@@ -95,16 +95,18 @@ namespace BLACK_OOPS_Arkanoid
 
         private void GameForm_Load(object sender, EventArgs e)
         {
+            //playground.BackgroundImage = Image.FromFile("../../Img/GameBackground.png");
+            //playground.BackgroundImageLayout = ImageLayout.Stretch;
             LoadTiles();
         }
 
         private void LoadTiles()
         {
             int xAxis = 10;
-            int yAxis = 5;
+            int yAxis = 6;
 
             int pbHeight = (int)(Height * 0.3) / yAxis;
-            int pbWidth = (Width - (xAxis - 5)) / xAxis;
+            int pbWidth = (Width - xAxis) / xAxis;
             
             cpb = new CustomPictureBox[yAxis,xAxis];
 
@@ -127,8 +129,15 @@ namespace BLACK_OOPS_Arkanoid
 
                     cpb[i, j].Left = j * pbWidth;
                     cpb[i, j].Top = i * pbHeight;
-
-                    cpb[i, j].BackgroundImage = Image.FromFile("../../Img/" + (i+1) + ".png");    
+                    if (i == 5)
+                    {
+                        cpb[i, j].BackgroundImage = Image.FromFile("../../Img/12.png");
+                    }
+                    else
+                    {
+                        cpb[i, j].BackgroundImage = Image.FromFile("../../Img/" + (i+1) + ".png");
+                    }
+                        
                     cpb[i, j].BackgroundImageLayout = ImageLayout.Stretch; 
 
                     cpb[i, j].Tag = "tileTag";
@@ -138,6 +147,11 @@ namespace BLACK_OOPS_Arkanoid
                     
                 }
             }
+        }
+
+        private void playground_MouseMove(object sender, MouseEventArgs e)
+        {
+            player.Left = e.X - (player.Width / 2);
         }
     }
 }

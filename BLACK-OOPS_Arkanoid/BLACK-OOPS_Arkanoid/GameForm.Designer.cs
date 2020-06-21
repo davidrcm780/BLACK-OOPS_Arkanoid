@@ -46,7 +46,7 @@ namespace BLACK_OOPS_Arkanoid
             // 
             // playground
             // 
-            this.playground.BackColor = System.Drawing.Color.Transparent;
+            this.playground.BackColor = System.Drawing.Color.Black;
             this.playground.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.playground.Controls.Add(this.ball);
             this.playground.Controls.Add(this.player);
@@ -56,6 +56,7 @@ namespace BLACK_OOPS_Arkanoid
             this.playground.Name = "playground";
             this.playground.Size = new System.Drawing.Size(638, 448);
             this.playground.TabIndex = 0;
+            this.playground.MouseMove += new System.Windows.Forms.MouseEventHandler(this.playground_MouseMove);
             // 
             // ball
             // 
