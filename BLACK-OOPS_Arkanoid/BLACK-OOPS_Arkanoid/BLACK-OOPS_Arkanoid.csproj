@@ -93,6 +93,7 @@
     <ItemGroup>
         <Compile Include="ConnectionDB.cs" />
         <Compile Include="CustomPictureBox.cs" />
+        <Compile Include="GameData.cs" />
         <Compile Include="GameForm.cs">
             <SubType>Form</SubType>
         </Compile>
@@ -167,7 +168,6 @@
       <Content Include="Img\7.png" />
       <Content Include="Img\8.png" />
       <Content Include="Img\9.png" />
-      <Content Include="Img\arcanoid.png" />
       <Content Include="Resources\arkanoid_title.png" />
       <Content Include="Resources\arkanoid_title1.png" />
       <Content Include="Resources\arkanoid_title2.png" />

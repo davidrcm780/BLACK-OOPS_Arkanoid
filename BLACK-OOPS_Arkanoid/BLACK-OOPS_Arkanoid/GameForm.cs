@@ -34,13 +34,17 @@ namespace BLACK_OOPS_Arkanoid
             timer1.Enabled = true;
             Cursor.Hide();
 
-            this.FormBorderStyle = FormBorderStyle.None;     //REMOVES ANY BORDER
-            this.TopMost = true;                             //BRINGS THE FORM TO THE FRONT
-            this.Bounds = Screen.PrimaryScreen.Bounds;       //MAKES IT FULL SCREEN
+            FormBorderStyle = FormBorderStyle.None;     //REMOVES ANY BORDER
+            TopMost = true;                             //BRINGS THE FORM TO THE FRONT
+            Bounds = Screen.PrimaryScreen.Bounds;       //MAKES IT FULL SCREEN
 
-            player.Top = playground.Bottom - (playground.Bottom / 10);    //SETS PLAYER POSITION
+            //SETS PLAYER POSITION
+            player.Top = playground.Bottom - (playground.Bottom / 10);    
+            player.Left = (playground.Width / 2) - (player.Width/2);
             
-            
+            //SETS THE BALL POSITION
+            ball.Top = player.Top - ball.Height;
+            ball.Left = player.Left + (player.Width / 2) - (ball.Width / 2);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -134,9 +138,6 @@ namespace BLACK_OOPS_Arkanoid
                     
                 }
             }
-            
-            
         }
-
     }
 }
