@@ -38,7 +38,7 @@ namespace BLACK_OOPS_Arkanoid
             Width = ClientSize.Width;
             
             DoubleBuffered = true;
-            
+
             timer1.Enabled = true;
             Cursor.Hide();
 
@@ -128,8 +128,6 @@ namespace BLACK_OOPS_Arkanoid
                         {
                             playground.Controls.Remove(cpb[i, j]);
                             cpb[i, j] = null;
-                            speedY += 1;
-                            speedX += 1;
 
                             //remainingPb--;
                         }
@@ -143,7 +141,6 @@ namespace BLACK_OOPS_Arkanoid
                         if (remainingPb == 0)
                             WinningGame?.Invoke();
                         */
-                        return;
                     }
                 }
             }
@@ -177,8 +174,8 @@ namespace BLACK_OOPS_Arkanoid
             int xAxis = 10;
             int yAxis = 6;
 
-            int pbHeight = (int)(Height * 0.3) / yAxis;
-            int pbWidth = (Width - xAxis) / xAxis;
+            int pbHeight = (int)(playground.Height * 0.3) / yAxis;
+            int pbWidth = (playground.Width - xAxis) / xAxis;
             
             cpb = new CustomPictureBox[yAxis,xAxis];
 

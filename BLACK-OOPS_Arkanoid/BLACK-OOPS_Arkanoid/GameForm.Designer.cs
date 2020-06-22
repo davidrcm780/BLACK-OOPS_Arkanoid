@@ -32,7 +32,7 @@ namespace BLACK_OOPS_Arkanoid
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BLACK_OOPS_Arkanoid.GameForm));
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.playground = new System.Windows.Forms.Panel();
@@ -43,14 +43,8 @@ namespace BLACK_OOPS_Arkanoid
             ((System.ComponentModel.ISupportInitialize) (this.ball)).BeginInit();
             ((System.ComponentModel.ISupportInitialize) (this.player)).BeginInit();
             this.SuspendLayout();
-            // 
-            // timer1
-            // 
             this.timer1.Interval = 1;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // tableLayoutPanel1
-            // 
             this.tableLayoutPanel1.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (64)))), ((int) (((byte) (64)))), ((int) (((byte) (64)))));
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
@@ -64,9 +58,6 @@ namespace BLACK_OOPS_Arkanoid
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1067, 554);
             this.tableLayoutPanel1.TabIndex = 1;
-            // 
-            // playground
-            // 
             this.playground.BackColor = System.Drawing.Color.Black;
             this.playground.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.playground.Controls.Add(this.ball);
@@ -78,9 +69,6 @@ namespace BLACK_OOPS_Arkanoid
             this.playground.Size = new System.Drawing.Size(851, 552);
             this.playground.TabIndex = 0;
             this.playground.MouseMove += new System.Windows.Forms.MouseEventHandler(this.playground_MouseMove);
-            // 
-            // ball
-            // 
             this.ball.BackColor = System.Drawing.Color.Transparent;
             this.ball.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ball.Image = ((System.Drawing.Image) (resources.GetObject("ball.Image")));
@@ -91,9 +79,6 @@ namespace BLACK_OOPS_Arkanoid
             this.ball.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ball.TabIndex = 1;
             this.ball.TabStop = false;
-            // 
-            // player
-            // 
             this.player.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.player.Image = ((System.Drawing.Image) (resources.GetObject("player.Image")));
             this.player.Location = new System.Drawing.Point(292, 473);
@@ -103,9 +88,6 @@ namespace BLACK_OOPS_Arkanoid
             this.player.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.player.TabIndex = 0;
             this.player.TabStop = false;
-            // 
-            // GameForm
-            // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
