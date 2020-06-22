@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
+using BLACK_OOPS_Arkanoid.Exceptions;
 
 namespace BLACK_OOPS_Arkanoid
 {
@@ -52,6 +53,8 @@ namespace BLACK_OOPS_Arkanoid
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            if(!GameData.gameStarted)
+                return;
             //player.Left = Cursor.Position.X - (player.Width / 2);    //THIS CENTERS THE PLAYER AROUND THE CURSOR
             
             //BALL MOVEMENT
@@ -85,7 +88,30 @@ namespace BLACK_OOPS_Arkanoid
 
             if (ball.Bottom >= playground.Bottom)
             {
-                timer1.Enabled = false;     //BALL IS OUT SO GAME STOPS
+
+                try
+                {
+                    GameData.lifes--;
+                    GameData.gameStarted = false;
+                    timer1.Stop();  //BALL IS OUT SO GAME STOPS
+                
+                    GameRestart();
+                    if (GameData.lifes == 0)
+                    {
+                        throw new OutOfLifes("");
+                    }
+                    else
+                    {
+                        timer1.Start();
+                    }
+                }
+                catch (OutOfLifes ex)
+                {
+                    timer1.Stop();
+                    GameFinished();
+                }
+                
+                
             }
             
             // Rutina de colisiones con cpb
@@ -135,7 +161,8 @@ namespace BLACK_OOPS_Arkanoid
             }
 
             if (e.KeyCode == Keys.Escape)
-                Close();                //ESC TO QUIT
+                Close();
+            //ESC TO QUIT
         }
 
         private void GameForm_Load(object sender, EventArgs e)
@@ -203,5 +230,21 @@ namespace BLACK_OOPS_Arkanoid
                 ball.Left = player.Left + (player.Width / 2) - (ball.Width / 2);
             }
         }
+
+        private void GameRestart()
+        {
+            player.Top = playground.Bottom - (playground.Bottom / 10); 
+            ball.Top = player.Top - ball.Height;
+            ball.Left = player.Left + (player.Width / 2) - (ball.Width / 2);
+        }
+
+        private void GameFinished()
+        {
+            ConnectionDB.ExecuteNonQuery($"INSERT INTO public.users(nickname, bestScore) VALUES('{NicknameReg.nick}', {point})");
+            this.Hide();
+            Cursor.Show();
+            new GameMenu().Show();
+        }
+        
     }
 }
