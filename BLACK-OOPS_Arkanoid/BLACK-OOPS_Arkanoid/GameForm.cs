@@ -20,6 +20,7 @@ namespace BLACK_OOPS_Arkanoid
         public int speedY = 0;
         //POINTS SCORED
 
+
         private Panel hud;
         private PictureBox heart;
         private int remainingPb = 0;
@@ -129,7 +130,7 @@ namespace BLACK_OOPS_Arkanoid
                             playground.Controls.Remove(cpb[i, j]);
                             cpb[i, j] = null;
 
-                            //remainingPb--;
+                            remainingPb--;
                         }
                         else if(cpb[i, j].Tag.Equals("blinded"))
                             cpb[i, j].BackgroundImage = Image.FromFile("../../Img/11.png");
@@ -137,10 +138,14 @@ namespace BLACK_OOPS_Arkanoid
                         speedY = -speedY;
 
                         //score.Text = GameData.score.ToString();
-                        /*
+
                         if (remainingPb == 0)
-                            WinningGame?.Invoke();
-                        */
+                        {
+                            MessageBox.Show("YOU WON!");
+                            Cursor.Show();
+                            GameFinished();
+                            
+                        }
                     }
                 }
             }
@@ -178,6 +183,7 @@ namespace BLACK_OOPS_Arkanoid
         {
             int xAxis = 10;
             int yAxis = 6;
+            remainingPb = xAxis * yAxis;
 
             int pbHeight = (int)(playground.Height * 0.3) / yAxis;
             int pbWidth = (playground.Width - xAxis) / xAxis;
