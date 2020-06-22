@@ -19,10 +19,10 @@ namespace BLACK_OOPS_Arkanoid
         public int speedX = 0; 
         public int speedY = 0;
         //POINTS SCORED
-        public int point = 0;
 
+        private Panel hud;
+        private PictureBox heart;
         private int remainingPb = 0;
-        
         private Label remainingLifes, score;
         public Action FinishGame, WinningGame;
 
@@ -67,7 +67,7 @@ namespace BLACK_OOPS_Arkanoid
                 //speed_top += 2;
                 //speed_left += 2;
                 speedY = -speedY; //DIRECTION CHANGE
-                point += 1; //TO SAVE SCORE
+                GameData.score += 1; //TO SAVE SCORE
             }
             
             //COLLISIONS OF BALL AND PLAYGROUND
@@ -149,12 +149,15 @@ namespace BLACK_OOPS_Arkanoid
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Space)
+            if (GameData.gameStarted == false)
             {
-                GameData.gameStarted = true;
-                //BALL SPEED
-                speedX = 5; 
-                speedY = -5;
+                if (e.KeyCode == Keys.Space)
+                {
+                    GameData.gameStarted = true;
+                    //BALL SPEED
+                    speedX = 5;
+                    speedY = -5;
+                }
             }
 
             if (e.KeyCode == Keys.Escape)
@@ -166,7 +169,9 @@ namespace BLACK_OOPS_Arkanoid
         {
             //playground.BackgroundImage = Image.FromFile("../../Img/GameBackground.png");
             //playground.BackgroundImageLayout = ImageLayout.Stretch;
+            
             LoadTiles();
+            panel();
         }
 
         private void LoadTiles()
@@ -237,10 +242,25 @@ namespace BLACK_OOPS_Arkanoid
 
         private void GameFinished()
         {
-            ConnectionDB.ExecuteNonQuery($"INSERT INTO public.users(nickname, bestScore) VALUES('{NicknameReg.nick}', {point})");
+            ConnectionDB.ExecuteNonQuery($"INSERT INTO public.users(nickname, bestScore) VALUES('{NicknameReg.nick}', {GameData.score})");
             this.Hide();
             Cursor.Show();
             new GameMenu().Show();
+        }
+
+        private void panel()
+        {
+            hud = new Panel();
+            hud.Width = playground.Width;
+            hud.Height = (int) (Height * 0.05);
+            hud.Anchor = AnchorStyles.Bottom;
+            heart = new PictureBox();
+            heart.Height = hud.Height;
+            heart.Width = heart.Height;
+            heart.BackgroundImage = Image.FromFile("../../Img/minimized-heart.png");
+            heart.BackgroundImageLayout = ImageLayout.Stretch;
+            hud.Controls.Add(heart);
+            playground.Controls.Add(hud);
         }
         
     }
