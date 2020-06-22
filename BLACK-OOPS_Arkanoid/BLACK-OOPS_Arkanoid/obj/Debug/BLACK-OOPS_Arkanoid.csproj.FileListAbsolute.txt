@@ -78,3 +78,4 @@ C:\Users\danq9\Desktop\Github Repositories\BLACK-OOPS_Arkanoid\BLACK-OOPS_Arkano
 C:\Users\js_pr\OneDrive\Escritorio\Repositorios\BLACK-OOPS_Arkanoid\BLACK-OOPS_Arkanoid\BLACK-OOPS_Arkanoid\obj\Debug\BLACK_OOPS_Arkanoid.GameForm.resources
 C:\Users\js_pr\OneDrive\Escritorio\Repositorios\BLACK-OOPS_Arkanoid\BLACK-OOPS_Arkanoid\BLACK-OOPS_Arkanoid\obj\Debug\BLACK_OOPS_Arkanoid.scores.resources
 C:\Users\danq9\Desktop\Github Repositories\BLACK-OOPS_Arkanoid\BLACK-OOPS_Arkanoid\BLACK-OOPS_Arkanoid\obj\Debug\BLACK_OOPS_Arkanoid.scores.resources
+C:\Users\js_pr\OneDrive\Escritorio\Repositorios\BLACK-OOPS_Arkanoid\BLACK-OOPS_Arkanoid\BLACK-OOPS_Arkanoid\obj\Debug\BLACK_OOPS_Arkanoid.GameOver.resources

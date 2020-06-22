@@ -109,7 +109,7 @@ namespace BLACK_OOPS_Arkanoid
                 catch (OutOfLifes ex)
                 {
                     timer1.Stop();
-                    GameFinished();
+                    GameOver();
                 }
                 
                 
@@ -252,6 +252,14 @@ namespace BLACK_OOPS_Arkanoid
             this.Hide();
             Cursor.Show();
             new GameMenu().Show();
+        }
+
+        private void GameOver()
+        {
+            ConnectionDB.ExecuteNonQuery($"INSERT INTO public.users(nickname, bestScore) VALUES('{NicknameReg.nick}', {GameData.score})");
+            this.Hide();
+            Cursor.Show();
+            new GameOver().Show();
         }
 
         private void panel()
