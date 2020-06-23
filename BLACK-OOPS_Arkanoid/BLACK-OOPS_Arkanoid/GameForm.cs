@@ -22,9 +22,9 @@ namespace BLACK_OOPS_Arkanoid
 
 
         private Panel hud;
-        private PictureBox heart;
+        private PictureBox heart, heart2, heart3;
         private int remainingPb = 0;
-        private Label remainingLifes, score;
+        private Label text, score;
         public Action FinishGame, WinningGame;
 
 
@@ -68,7 +68,7 @@ namespace BLACK_OOPS_Arkanoid
                 //speed_top += 2;
                 //speed_left += 2;
                 speedY = -speedY; //DIRECTION CHANGE
-                GameData.score += 1; //TO SAVE SCORE
+                
             }
             
             //COLLISIONS OF BALL AND PLAYGROUND
@@ -93,6 +93,19 @@ namespace BLACK_OOPS_Arkanoid
                 try
                 {
                     GameData.lifes--;
+                    switch (GameData.lifes)
+                    {
+                        case 2:
+                            heart3.Hide();
+                            break;
+                        case 1:
+                            heart2.Hide();
+                            break;
+                        case 0:
+                            heart.Hide();
+                            break;
+                        
+                    }
                     GameData.gameStarted = false;
                     timer1.Stop();  //BALL IS OUT SO GAME STOPS
                 
@@ -122,7 +135,7 @@ namespace BLACK_OOPS_Arkanoid
                 {
                     if (cpb[i, j] != null && ball.Bounds.IntersectsWith(cpb[i, j].Bounds))
                     {   
-                        //GameData.score += (int)(cpb[i, j].Hits * GameData.ticksCount);
+                        
                         cpb[i, j].Hits--;
 
                         if (cpb[i, j].Hits == 0)
@@ -131,13 +144,34 @@ namespace BLACK_OOPS_Arkanoid
                             cpb[i, j] = null;
 
                             remainingPb--;
+                            switch (i)
+                            {
+                                case 0:
+                                    GameData.score += 50;
+                                    break;
+                                case 1:
+                                    GameData.score += 25;
+                                    break;
+                                case 2:
+                                    GameData.score += 20;
+                                    break;
+                                case 3:
+                                    GameData.score += 15;
+                                    break;
+                                case 4:
+                                    GameData.score += 10;
+                                    break;
+                                case 5:
+                                    GameData.score += 5;
+                                    break;
+                            }
                         }
                         else if(cpb[i, j].Tag.Equals("blinded"))
                             cpb[i, j].BackgroundImage = Image.FromFile("../../Img/11.png");
 
                         speedY = -speedY;
 
-                        //score.Text = GameData.score.ToString();
+                        score.Text = GameData.score.ToString();
 
                         if (remainingPb == 0)
                         {
@@ -264,16 +298,49 @@ namespace BLACK_OOPS_Arkanoid
 
         private void panel()
         {
+            //Se crea el panel donde estara el HUD del juego
             hud = new Panel();
             hud.Width = playground.Width;
             hud.Height = (int) (Height * 0.05);
+            hud.Top = playground.Bottom - hud.Height;
             hud.Anchor = AnchorStyles.Bottom;
+            
+            //Se crean tanto los PictureBox comp los labels
             heart = new PictureBox();
+            heart2 = new PictureBox();
+            heart3 = new PictureBox();
+            text = new Label();
+            score = new Label();
+            
+            //Se definen las dimensiones del corazon 1
             heart.Height = hud.Height;
             heart.Width = heart.Height;
             heart.BackgroundImage = Image.FromFile("../../Img/minimized-heart.png");
             heart.BackgroundImageLayout = ImageLayout.Stretch;
+            
+            //Se definen las dimensiones del corazon 1
+            heart2.Height = hud.Height;
+            heart2.Width = heart.Height;
+            heart2.BackgroundImage = Image.FromFile("../../Img/minimized-heart.png");
+            heart2.BackgroundImageLayout = ImageLayout.Stretch;
+            
+            //Se definen las dimensiones del corazon 1
+            heart3.Height = hud.Height;
+            heart3.Width = heart.Height;
+            heart3.BackgroundImage = Image.FromFile("../../Img/minimized-heart.png");
+            heart3.BackgroundImageLayout = ImageLayout.Stretch;
+            
+            //Se separan los picturesBox para que queden ordenados
+            heart2.Left = heart.Right + 1;
+            heart3.Left = heart2.Right + 1;
+            
+            //Se definen las dimensiones del text
+            
+            
+            //Se agregan todos los elementos al panel
             hud.Controls.Add(heart);
+            hud.Controls.Add(heart2);
+            hud.Controls.Add(heart3);
             playground.Controls.Add(hud);
         }
         
