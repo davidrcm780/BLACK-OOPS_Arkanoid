@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 using BLACK_OOPS_Arkanoid.Exceptions;
+using ContentAlignment = System.Drawing.ContentAlignment;
 
 namespace BLACK_OOPS_Arkanoid
 {
@@ -25,10 +26,7 @@ namespace BLACK_OOPS_Arkanoid
         private PictureBox heart, heart2, heart3;
         private int remainingPb = 0;
         private Label text, score;
-        public Action FinishGame, WinningGame;
-
-
-
+        
         private CustomPictureBox[,] cpb;
 
         public GameForm()
@@ -56,8 +54,7 @@ namespace BLACK_OOPS_Arkanoid
         {
             if(!GameData.gameStarted)
                 return;
-            //player.Left = Cursor.Position.X - (player.Width / 2);    //THIS CENTERS THE PLAYER AROUND THE CURSOR
-            
+
             //BALL MOVEMENT
             ball.Left += speedX;
             ball.Top += speedY;
@@ -65,8 +62,6 @@ namespace BLACK_OOPS_Arkanoid
             //COLLISION OF BALL AND PLAYER
             if (ball.Bottom >= player.Top && ball.Bottom <= player.Bottom && ball.Left >= player.Left && ball.Right <= player.Right)
             {
-                //speed_top += 2;
-                //speed_left += 2;
                 speedY = -speedY; //DIRECTION CHANGE
                 
             }
@@ -128,7 +123,7 @@ namespace BLACK_OOPS_Arkanoid
                 
             }
             
-            // Rutina de colisiones con cpb
+            // COLISIONES CON BLOQUES
             for (int i = 5; i >= 0; i--)
             {
                 for (int j = 0; j < 10; j++)
@@ -165,6 +160,7 @@ namespace BLACK_OOPS_Arkanoid
                                     GameData.score += 5;
                                     break;
                             }
+                            text.Text = "SCORE: " + GameData.score.ToString();
                         }
                         else if(cpb[i, j].Tag.Equals("blinded"))
                             cpb[i, j].BackgroundImage = Image.FromFile("../../Img/11.png");
@@ -195,7 +191,7 @@ namespace BLACK_OOPS_Arkanoid
                     GameData.gameStarted = true;
                     //BALL SPEED
                     speedX = 5;
-                    speedY = -5;
+                    speedY = -6;
                 }
             }
 
@@ -206,8 +202,7 @@ namespace BLACK_OOPS_Arkanoid
 
         private void GameForm_Load(object sender, EventArgs e)
         {
-            //playground.BackgroundImage = Image.FromFile("../../Img/GameBackground.png");
-            //playground.BackgroundImageLayout = ImageLayout.Stretch;
+            
             
             LoadTiles();
             panel();
@@ -255,7 +250,7 @@ namespace BLACK_OOPS_Arkanoid
                         
                     cpb[i, j].BackgroundImageLayout = ImageLayout.Stretch; 
                     
-                    //Controls.Add(cpb[i,j]);
+                    
                     playground.Controls.Add(cpb[i,j]);
                     
                 }
@@ -339,12 +334,19 @@ namespace BLACK_OOPS_Arkanoid
             heart3.Left = heart2.Right + 1;
             
             //Se definen las dimensiones del text
-            
+            text.Text = "SCORE: " + GameData.score.ToString();
+            text.Font = new Font("Microsoft YaHei", 24F);
+            text.Width = heart.Width * 5;
+            text.ForeColor = Color.White;
+            text.TextAlign = ContentAlignment.MiddleCenter;
+            text.Left = hud.Right - text.Width;
+            text.Height = hud.Height;
             
             //Se agregan todos los elementos al panel
             hud.Controls.Add(heart);
             hud.Controls.Add(heart2);
             hud.Controls.Add(heart3);
+            hud.Controls.Add(text);
             playground.Controls.Add(hud);
         }
         
