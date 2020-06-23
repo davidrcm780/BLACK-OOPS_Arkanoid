@@ -1,14 +1,14 @@
 # BLACK OOPS
 
 ### Integrantes: 
-..* Jaime Samuel Portan Rivas, 00046119.
-..* Carlos Rodrigo López López, 00083917.
-..* Daniel Alfredo Quesada Cortez, 00147619.
-..*
+* Jaime Samuel Portan Rivas, 00046119.
+* Carlos Rodrigo López López, 00083917.
+* Daniel Alfredo Quesada Cortez, 00147619.
+*
 
 ### IDE: 
 
-..*RIDER
+*RIDER
 
 ### FAQ's
 
@@ -29,4 +29,4 @@
 
 ### Trello:
 
-..* https://trello.com/b/TF73I0X2/arkanoid-black-oops
+* https://trello.com/b/TF73I0X2/arkanoid-black-oops
