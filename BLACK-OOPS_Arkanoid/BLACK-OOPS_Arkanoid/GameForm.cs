@@ -285,7 +285,9 @@ namespace BLACK_OOPS_Arkanoid
             ConnectionDB.ExecuteNonQuery($"INSERT INTO public.users(nickname, bestScore) VALUES('{NicknameReg.nick}', {GameData.score})");
             this.Hide();
             Cursor.Show();
-            new GameMenu().Show();
+            int x = 1;
+            int p = GameData.score;
+            new GameOver(x, p).Show();
         }
 
         private void GameOver()
@@ -293,7 +295,9 @@ namespace BLACK_OOPS_Arkanoid
             ConnectionDB.ExecuteNonQuery($"INSERT INTO public.users(nickname, bestScore) VALUES('{NicknameReg.nick}', {GameData.score})");
             this.Hide();
             Cursor.Show();
-            new GameOver().Show();
+            int x = 0;
+            int s = GameData.score;
+            new GameOver(x, s).Show();
         }
 
         private void panel()

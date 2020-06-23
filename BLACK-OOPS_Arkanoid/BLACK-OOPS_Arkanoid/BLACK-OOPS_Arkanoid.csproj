@@ -109,6 +109,8 @@
         <Compile Include="GameMenu.Designer.cs">
           <DependentUpon>GameMenu.cs</DependentUpon>
         </Compile>
+        <Compile Include="GameOver.cs" />
+        <Compile Include="GameOver.Designer.cs" />
         <Compile Include="NicknameReg.cs">
           <SubType>Form</SubType>
         </Compile>
@@ -129,6 +131,7 @@
         <EmbeddedResource Include="GameMenu.resx">
           <DependentUpon>GameMenu.cs</DependentUpon>
         </EmbeddedResource>
+        <EmbeddedResource Include="GameOver.resx" />
         <EmbeddedResource Include="NicknameReg.resx">
           <DependentUpon>NicknameReg.cs</DependentUpon>
         </EmbeddedResource>
