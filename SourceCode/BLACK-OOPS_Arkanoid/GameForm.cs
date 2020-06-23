@@ -46,7 +46,7 @@ namespace BLACK_OOPS_Arkanoid
             Bounds = Screen.PrimaryScreen.Bounds;       //MAKES IT FULL SCREEN
 
             //SETS PLAYER POSITION
-            player.Top = playground.Bottom - (playground.Bottom / 10);    
+            player.Top = playground.Bottom - (playground.Bottom / 9);    
 
         }
 
@@ -116,7 +116,7 @@ namespace BLACK_OOPS_Arkanoid
             //WHEN BALL GOES OUT OF BOUNDS
             try
             {
-                if (ball.Right > playground.Right+10 || ball.Left < playground.Left-10)
+                if (ball.Right > playground.Right+5 || ball.Left < playground.Left-5)
                 {
                     GameData.gameStarted = false;
                     speedX = 0;
@@ -282,7 +282,7 @@ namespace BLACK_OOPS_Arkanoid
 
         private void GameRestart()
         {
-            player.Top = playground.Bottom - (playground.Bottom / 10); 
+            player.Top = playground.Bottom - (playground.Bottom / 9); 
             ball.Top = player.Top - ball.Height;
             ball.Left = player.Left + (player.Width / 2) - (ball.Width / 2);
         }
@@ -319,7 +319,7 @@ namespace BLACK_OOPS_Arkanoid
             
             //HUD
             hud.Width = playground.Width;
-            hud.Height = (int) (Height * 0.05);
+            hud.Height = (int) (Height * 0.045);
             hud.Top = playground.Bottom - hud.Height;
             hud.Anchor = AnchorStyles.Bottom;
             hud.BackColor = Color.Gray;
