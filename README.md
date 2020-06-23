@@ -1,16 +1,16 @@
 # BLACK OOPS
 
-## Integrantes: 
+### Integrantes: 
 ..* Jaime Samuel Portan Rivas, 00046119.
 ..* Carlos Rodrigo López López, 00083917.
 ..* Daniel Alfredo Quesada Cortez, 00147619.
 ..*
 
-## IDE: 
+### IDE: 
 
 ..*RIDER
 
-## FAQ's
+### FAQ's
 
 1. ¿Qué pasa si no coloco mi nickname?
 - No se puede iniciar una partida sin un nickname, debido a que es necesario un nickname para que tu puntaje sea guardado de manera correcta.
@@ -27,6 +27,6 @@
 5. ¿Qué pasa si digito el mismo nickname siempre que quiero jugar?
 - No ocurre nada, se crea un nuevo registro con tu nickname y tu nuevo puntaje.
 
-## Trello:
+### Trello:
 
 ..* https://trello.com/b/TF73I0X2/arkanoid-black-oops
