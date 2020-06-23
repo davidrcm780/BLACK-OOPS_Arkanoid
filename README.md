@@ -4,11 +4,11 @@
 * Jaime Samuel Portan Rivas, 00046119.
 * Carlos Rodrigo López López, 00083917.
 * Daniel Alfredo Quesada Cortez, 00147619.
-*
+* Rodrigo David Cortez Martinez, 00045719.
 
 ### IDE: 
 
-*RIDER
+* RIDER
 
 ### FAQ's
 
